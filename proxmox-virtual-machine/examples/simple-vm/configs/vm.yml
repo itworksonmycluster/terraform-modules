@@ -1,0 +1,24 @@
+vms:
+  vm-test:
+    name: vm-test
+    target_node: "lab01"
+    template_name: "ubuntu-cloud-template"
+    vmid: 0
+    onboot: true
+    oncreate: true
+    agent: 0
+    os_type: cloud-init
+    cores: 1
+    sockets: 1    
+    memory: 2048
+    disks:
+      disk01: 
+        size: "11G"
+        storage: "local-lvm"
+      disk02:
+        size: "10G"
+        storage: "local-lvm"
+    network:
+      - model:
+        bridge:
+        ipconfig: ip=10.98.1.9$/24,gw=10.98.1.1
